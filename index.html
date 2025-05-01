@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patanjali Jewellery and Gems | Authentic Gemstones & Rudraksha</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --secondary-gold: #FFD700;
+            --dark-bg: #1a1a1a;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .heading-font {
+            font-family: 'Lora', serif;
+        }
+        
+        .gold-gradient-text {
+            background: linear-gradient(90deg, #D4AF37, #FFD700);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .gold-border-gradient {
+            border: 2px solid transparent;
+            border-image: linear-gradient(90deg, #D4AF37, #FFD700);
+            border-image-slice: 1;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.1);
+            color: var(--primary-gold);
+        }
+        
+        .banner-slide {
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gold);
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .zodiac-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .floating-socials {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: none;
+            }
+            
+            .mobile-menu.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--dark-bg);
+                padding: 20px;
+                z-index: 99;
+            }
+            
+            .floating-socials {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Navigation Bar -->
+    <nav class="bg-black text-white py-4 px-6 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="#" class="text-2xl font-bold heading-font gold-gradient-text">Patanjali Jewellery and Gems</a>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link hover:text-yellow-300 transition">Home</a>
+                <a href="#gemstones" class="nav-link hover:text-yellow-300 transition">Gemstones</a>
+                <a href="#rudraksha" class="nav-link hover:text-yellow-300 transition">Rudraksha</a>
+                <a href="#astrology" class="nav-link hover:text-yellow-300 transition">Astrology</a>
+                <a href="#contact" class="nav-link hover:text-yellow-300 transition">Contact</a>
+            </div>
+            
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-yellow-300 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="#home" class="py-2 hover:text-yellow-300">Home</a>
+            <a href="#gemstones" class="py-2 hover:text-yellow-300">Gemstones</a>
+            <a href="#rudraksha" class="py-2 hover:text-yellow-300">Rudraksha</a>
+            <a href="#astrology" class="py-2 hover:text-yellow-300">Astrology</a>
+            <a href="#contact" class="py-2 hover:text-yellow-300">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Banner with Slider -->
+    <section id="home" class="relative overflow-hidden">
+        <div id="banner-slider" class="relative h-96 md:h-screen max-h-screen w-full">
+            <!-- Slide 1 -->
+            <div class="banner-slide absolute inset-0 bg-cover bg-center flex items-center" style="background-image: url('https://media-hosting.imagekit.io/833598e473d24262/final_combined_image.png?Expires=1840222024&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=G5o1vMF5IvK-p4yJcpR0UMGB3Qs0kqVbYvS3-HYWCXswMGdmJhY2z4UGOM8XJyhSHj-DxAstBH7VMDPoN287RhrC7izBun~-yrmBvQB8oQmruR5vH4wxmivWiaDp0GVz4mY1Eq91ngzk14KmthKAwtXqtelkp5Da7-Oqm08YWyljtyPoGGpTJ8t1sWFcaV1NQmGI6F~~wV3uu-rTTKW9nQ0TbxwMJuAZlQ4NxwJ0VgmzWIFIuoX~FRHmDBGEsXdEhB72~Kmvi4PHZZuJAf-2NNel62RK0lnhYq4YtH2Aj0gd2FmYAqMhZJ9rdjdbPVPArm-PeGhh224CSkEHHyN88Q__');">
+                <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+                <div class="container mx-auto px-6 relative z-10 text-white text-center">
+                    <h1 class="text-4xl md:text-6xl font-bold heading-font mb-4">Authentic Gemstones & Rudraksha</h1>
+                    <p class="text-xl md:text-2xl mb-8">Enhance your life with divine energy and celestial blessings</p>
+                    <a href="#gemstones" class="bg-gradient-to-r from-yellow-600 to-yellow-400 text-black font-bold py-3 px-8 rounded-full hover:shadow-lg transition duration-300">Explore Collection</a>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="banner-slide absolute inset-0 bg-cover bg-center flex items-center" style="background-image: url('https://media-hosting.imagekit.io/4c67ff8cdd3e4a5c/1_uzsms9SUmXAPoEtyqVqHLA.jpg?Expires=1840218068&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=DsiMqRL3EEI5O7vlCbPJBE4XpR0WgxN20sg6EtFPPvDAhYaMw8HMFHRKWHXFPpjkFVkAII~KR5vkMI24hnh6wWMsj4AKzgxEz0QHzzCdDIcdiBWNrDImU7~tQrE5QrbfprCfj~KgVKH4woEePdTJldbkQTZmxQIhOPUP-zE8s476F0WroyT8N~XYRK-V~RDgzG~P50vlGgZz6MocXQAc4Mx9FriFZ-lhDFKTlkVCKJSwDQLMkkSWpn3gvq4c8TMsSN2yTyG-GlD9bsyjkzuqlP3Cpyg9jkMZ9s0MUWFN-jFpgfiNAmVYSwFk01KTfQLdAP3sXmfdaJrZpyMJPgRwPA__'); display: none;">
+                <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+                <div class="container mx-auto px-6 relative z-10 text-white text-center">
+                    <h1 class="text-4xl md:text-6xl font-bold heading-font mb-4">Certified Rudraksha Beads</h1>
+                    <p class="text-xl md:text-2xl mb-8">From 1 to 21 Mukhi, sourced directly from Nepal</p>
+                    <a href="#rudraksha" class="bg-gradient-to-r from-yellow-600 to-yellow-400 text-black font-bold py-3 px-8 rounded-full hover:shadow-lg transition duration-300">View Rudraksha</a>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="banner-slide absolute inset-0 bg-cover bg-center flex items-center" style="background-image: url('https://media-hosting.imagekit.io/aae072ad325343e3/ChatGPT%20Image%20Apr%2026,%202025,%2012_14_26%20AM.png?Expires=1840214685&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Ubj~CWeE7jHbO7kkzsbXKX6SVFGMayd0lxAY0MkTgzVFh28-cvbgHI1s~SsdcTpAY2swmiwfi1-lzgkooxPdD0GCUQFqzSBISCkAv73eud-MFdU1GlF6usAyw0uM~fgl3SYzRRyfeXS7PWlaUExqdRj6B2H7ftPs5sGEF4~o1bsTXz7B4xy6j6OUwFDpSUjSy6FV~mmRrgSTkTFjSDEApDMLimgZGOfoHdHPB6RfCoxl3TLpH6GIHIEVBtUqHBCQUOJkyLybxWP7PlDyyqQ0TEhbzrTiDGaL3tU1w~lEA4Sn8SjkvbLpLpT0iIC4N47RJ3aJU3LvauwvepYNA~sW2A__'); display: none;">
+                <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+                <div class="container mx-auto px-6 relative z-10 text-white text-center">
+                    <h1 class="text-4xl md:text-6xl font-bold heading-font mb-4">Zodiac Gemstones</h1>
+                    <p class="text-xl md:text-2xl mb-8">Personalized recommendations based on your birth chart</p>
+                    <a href="#astrology" class="bg-gradient-to-r from-yellow-600 to-yellow-400 text-black font-bold py-3 px-8 rounded-full hover:shadow-lg transition duration-300">Discover Your Stone</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-0 right-0 flex justify-center space-x-2 z-10">
+            <button class="banner-dot w-3 h-3 rounded-full bg-white opacity-50 focus:outline-none" data-slide="0"></button>
+            <button class="banner-dot w-3 h-3 rounded-full bg-white opacity-50 focus:outline-none" data-slide="1"></button>
+            <button class="banner-dot w-3 h-3 rounded-full bg-white opacity-50 focus:outline-none" data-slide="2"></button>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold heading-font text-center mb-12 gold-gradient-text">Our Collections</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Category 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://media-hosting.imagekit.io/893506b1cfb44091/bdaa6928de6b5c8719b375dca000a4d0.jpg?Expires=1840218822&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=xilA9X7GK2cMwcXWt-tx7Thz4yoYMg7TnoTrdtzVYaQADlov0okfGTWDTrx3W4tjZlSIcUP6QHp3WSMENowuj5GL6eFVQBIpSSSjto5KSgPvp9atDEB1b14tAFKetb2oVF3vxEIv7vEJrFH7Rg0-iW-JYFon1kISACGMbA6uO7gz7xPH001uU6~z48XFGPfsFcBSL9l2qdJ5DVtbu075bQslSo-DLVpYwsNMHtE6STbbFi9ad2IOxSZU-~sMV1IE8~yh8ZvlITw4vex7~7qWsKWYV~onunmCRKhDGxds6AHiT4u3Oi~PH0p21O4uBZvjLF6PKapvyMKiXK3ktYRxag__');"></div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Precious Gemstones</h3>
+                        <p class="text-gray-600 mb-4">Emerald, Ruby, Blue Sapphire & more</p>
+                        <a href="#gemstones" class="text-yellow-600 font-medium hover:underline">View Collection</a>
+                    </div>
+                </div>
+                
+                <!-- Category 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Semi-Precious Stones</h3>
+                        <p class="text-gray-600 mb-4">Amethyst, Citrine, Garnet & more</p>
+                        <a href="#gemstones" class="text-yellow-600 font-medium hover:underline">View Collection</a>
+                    </div>
+                </div>
+                
+                <!-- Category 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://media-hosting.imagekit.io/1ba06887ad0b40e0/istockphoto-1222000174-612x612.jpg?Expires=1840218186&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=LNge7-wR7IsoK96-6IuRif9ReksIB0hPyVhbu8sNI4IzcDbcaApSiNmg9Rb6SBHaHVZn0pZbCElpP7yAlC~EGGDqaUOrkHUdRftwEzFoqW~iCBIoNFAHandWcDWMIHpRa1MYF~Urk9wsIzOkhn~pyplSaHSEhQB5UA8fRRO5L9bUxT-QvxKdkB3eMNZ6v9YU5jC6vLQyYwbotuibLalIw14AwoQpBJd~8YtScXGkYz2auPWfVdy9wMNhWrlhnQOYIjLLCf-Gw0lDIo6gVyGPkeLgxfnt-DsmtSgmfIAg89xIVQJ2Mhe~wHSC~5FeF0q4V-sd-m8nnZJJAJvaevY01A__');"></div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Certified Rudraksha</h3>
+                        <p class="text-gray-600 mb-4">1 to 21 Mukhi beads from Nepal</p>
+                        <a href="#rudraksha" class="text-yellow-600 font-medium hover:underline">View Collection</a>
+                    </div>
+                </div>
+                
+                <!-- Category 4 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://media-hosting.imagekit.io/08151324602e49c6/image%20(12).jpg?Expires=1840216919&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=QemMwx4IuuyJovtVAfZnj2GHq~ghs4I5BCESQZZYK8hQ6pPdGaWG3a1ttoYOALGZe9hbYJfBikmZIsE5~682T0rpaCHo8ipGcuzOQU2a~j6YwdtFUja4O1V7B86CDzaQBqmiMbUqYmpXguPR3Eo~eyshJneRXauJ0LptmlUAwUJA7RCtXiFhzQyZnebVLE9Q0f1Zt09-wwxwXc-H6MbYaU~E6iZhnaeCE-VeGm~B1DddcRRHHWDYYEJQEhbv5QYxblKmuT64NyNARa5h7hQJaXo-Uug4zsDWtl7Jb0h1IF2tL6oXrF8q0wf7~PQAUTA7ezWiW2Z-qM72EFTm3mf9jw__');"></div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Zodiac Gemstones</h3>
+                        <p class="text-gray-600 mb-4">Stones aligned with your birth chart</p>
+                        <a href="#astrology" class="text-yellow-600 font-medium hover:underline">View Collection</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Gemstones -->
+    <section id="gemstones" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold heading-font text-center mb-12 gold-gradient-text">Featured Gemstones</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-64 bg-cover bg-center" style="background-image: url('https://media-hosting.imagekit.io/d3f44b800cb74eba/ChatGPT%20Image%20Apr%2025,%202025,%2010_13_27%20PM.png?Expires=1840207636&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=djdUl5FeVnC~mq4KeLPTr2r9VJXIY3F805WyFOBNfwu8HdG0C1WdY7MG0blaWRyX1qrrV0jRkdspjEeVXxwM8x1nOQ~tPyiKObbJopvB-jm4KeyNVuvz7XQLo4e0xBS~uAVi3F0fehCLlWt8kV~6In8SxHYsiu1a-NNTi4rbJW-j3skyZCvV~VLvZE~JNyfZOT9cBPsKqF1NtDFr2VjqYlBvjU1xyYTRlUbcQRh82LVrJ9Xq8XXMOfmo7Xm4lABvYs4~rLY3FMdZ01-WIr9VnUttHnBTEvsuTlEzV5hrl0NTFkV20xSKbANxlD76zWeb-gMmoHOXm67m0AtqsnVkLQ__');"></div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Natural Emerald (Panna)</h3>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded">Certified</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Enhances intelligence, communication and business success. Ruling planet Mercury.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-yellow-600">Wholesale price</span>
+                            <button class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded transition">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-64 bg-cover bg-center" style="background-image: url('https://media-hosting.imagekit.io/9a68ca5d9cd64eae/ChatGPT%20Image%20Apr%2025,%202025,%2009_27_36%20PM.png?Expires=1840205253&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=0w9unUAhDG04hn37G1UBSwiBP~rUyD7tDe40HYgmiRukF2B56Ju-NJ6e4upeIKlrzoCg0pE0DNTQ3ddeXi8bjsfJBI-VLA-EyK-xUGADIEHfBtpCqH4Maze93CiCrSkc0PfvUQhJx1NA8iu5WJ8nuNU4tAWpnLuDeNVufp34mcDNB0F64vUqptV5IQ4EMWvb9F2zIk9u0i420r1vANv6GPDl9FZosFoFFV7ncumTMQ87Z5ChZtmBYCWgSMGhBqAVajsTLdZNC6bwo27KyUHQlDXpFEnSnZdbPeJSY6cpVCizUMIq-YN3ZLx92bhFWao7tm7ziP6ktoODarb1HN7EUA__');"></div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Blue Sapphire (Neelam)</h3>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded">Certified</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Powerful stone of Saturn, brings wealth and protects from evil eye.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-yellow-600">wholesale price</span>
+                            <button class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded transition">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-64 bg-cover bg-center" style="background-image: url('https://media-hosting.imagekit.io/d69bf4bcb8bc40a2/ChatGPT%20Image%20Apr%2025,%202025,%2010_09_31%20PM.png?Expires=1840207199&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=aBMQnn--Ypa~EuPc8h-hmJqTXl7h5I5cJgYprat4XsdIEysWmO4~GsnKxXzhGZe42VYgvdMt7~Xgzy5uVwntE4xOQUcP~48usPPvd~zSJD14nulfhnwDyRoFF6F9YKeTsZunrP1n3UdZbn~LOzT9fhJEzprt13xJbgajxN~jcDqLlqw-Y-1KO1aI1uDRAG2AySrDEv9Mt5X-Xq~0Hra7818D2EbZfM1ZbaG~84YeHxjtoVP9f5L4uEUyxTMb2fAjBEypSIFKa7FUrhNAm-x8qCvvdfsaUb0lQ8fpS5VOrEuXR-fNg8DrC3tKdz6Ut-wEgPtg1YojSS32LyaNV0UAPw__');"></div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Red Coral (Moonga)</h3>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded">Certified</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Ruled by Mars, enhances courage, vitality and protects from accidents.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-yellow-600">wholesale price</span>
+                            <button class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded transition">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#gemstones" class="inline-block bg-black text-white font-bold py-3 px-8 rounded-full hover:bg-gray-800 transition duration-300">View All Gemstones</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- A to Z Gemstones Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold heading-font text-center mb-12 gold-gradient-text">A to Z Gemstones</h2>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <div class="bg-white p-4 rounded shadow-sm text-center hover:shadow-md transition">
+                    <div class="h-16 w-16 mx-auto mb-2 bg-cover bg-center" style="background-image: url('https://media-hosting.imagekit.io/90afa7ea68ed48c8/ChatGPT%20Image%20Apr%2025,%202025,%2011_25_19%20PM.png?Expires=1840211745&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=EE-RczprC~6yBfJHwBNl7-kXvJ3KutmBbJdYwZusB316vHFWGnBjH9QE5m7TM~ZkMhsp8BJuqexKaVDbDh6o5loB3~dfZ-GRAMpPd0f2C6IFh75-SC9cPuUOVQEijmX7MVZxXe-BtixivTMqgUGKmW2I0guMDhIgoVRfs89JLaFvEH2YfOR9ne-Rknh3YSTUa9dSLVR5zYmrCnxdw3EU73MIoSm9AaGqNZzcr9j9XW59UK89ciXd~zaYzKB~AzNXD-5r7yNXFEsZjJnYYEM~djwXBfnjKCFLWbDR0ANWKEd51zG7jMBwWdDr9FwQpf0O~jbaIV9-MfOD-4MUd8EfIQ__');"></div>
+                    <h3 class="font-medium">Amethyst</h3>
+                </div>
+                <div class="bg-white p-4 rounded shadow-sm text-center hover:shadow-md transition">
+                    <div class="h-16 w-16 mx-auto mb-2 bg-cover bg-center" style="background-image: url('https://media-hosting.imagekit.io/01d78fe77ef14b91/ChatGPT%20Image%20Apr%2025,%202025,%2011_27_22%20PM.png?Expires=1840211853&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=nGtPuXSdVvJbFJnYqA~Z9UuQKj8MLX~SYjxd96jdzf7~9qxpq6xopaqoQF9LK9DPHK-hHzBb9svdpC0UmWBSb6YWM7rSqFKzNfwA5HXSgZXXzFEmrpLQdPezWMiMGEG05OoGwwVBj9~JcjwCtKTtsu0UnE3qkFWO9~U8s7VMDRNaXqopDvSSZlDbIKKFOQgfqZ7zpaQQvdT3IhJb4cRQU3sb84APpwWGzhCtYK7tminQdujnV4VhpMU8KxsxZlOoKLeXO6L0Xk8BG0p9I0SFGpKZbYfQy-rIdLedfYO9AbtPI7W7~U4cKLiXiSq14JMBFwRCfH-FY4g6ONL6etdcyw__');"></div>
+                    <h3 class="font-medium">Blue Sapphire</h3>
+                </div>
+                <div class="bg-white p-4 rounded shadow-sm text-center hover:shadow-md transition">
+                    <div class="h-16 w-16 mx-auto mb-2 bg-cover bg-center" style="background-image: url('https://media-hosting.imagekit.io/762b9f5491904a14/ChatGPT%20Image%20Apr%2025,%202025,%2011_32_26%20PM.png?Expires=1840212211&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=zZXGl0ecsuvOjyGvkeoy7yU4BQtsFwHeyB~peW4iwEhc6iK-qWNORqO7Bk8VKemgwN5m6Qr9wBkDfsbO6sPvlNoD8rvR7SP4sCoPhYwujxpcE9mZIsNMgREkrZ6PC50gkAu-56-N~dfRPhoPx82Gg5YoYD2wT9isruDUJKzy7y0Xok-pjZYJs914fQlXYJ6rgPC7Ov6QWJ4E3ckliqElFIxx1DlIZk4sCQzvOqzQwtQu-3fihuMf8t8C69afz89sr~CIoAJU9VXjKV1CK1i8mlpg3g8n4mpY5xQRas3-H4jhiA4TVYPT80fgzg26bpvpnG0sDtqKz4ndOjh6qtOunw__');"></div>
+                    <h3 class="font-medium">Citrine</h3>
+                </div>
+                <div class="bg-white p-4 rounded shadow-sm text-center hover:shadow-md transition">
+                    <div class="h-16 w-16 mx-auto mb-2 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <h3 class="font-medium">Diamond</h3>
+                </div>
+                <div class="bg-white p-4 rounded shadow-sm text-center hover:shadow-md transition">
+                    <div class="h-16 w-16 mx-auto mb-2 bg-cover bg-center" style="background-image: url('https://media-hosting.imagekit.io/1fda4f4677214061/ChatGPT%20Image%20Apr%2025,%202025,%2011_35_11%20PM.png?Expires=1840212323&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=dHUaLJVwU0MCcZnQWx257cqQr6NFRna-Vr6HNrxs76Mtvd8zFfDUGq~m0GiDAq2lrzluxc9TARJbcErFrlIYH8Exq-my54wkRyhVMXvlCbvlM4NgX4412En6Bo5CqgoWu~JXyKSUKdu6YEs13mTFWA-un16GtOkdOyTZA2PsjWyX76FSXbX2cUd49kLfhZt-J9GkmbzsKauYerEuu5tut0CEW2ulA6QJwKE4qYNkWkGsNRpDfcGvCRyecZCYsKxZMQWTkRXu0jLW42mLyDYoZ4cWOjuAdbi10AJLZkz94MopqmFhpERCD8XeopAudkbeDCyxIzQorbIWBnVrXUxvoA__');"></div>
+                    <h3 class="font-medium">Emerald</h3>
+                </div>
+                <div class="bg-white p-4 rounded shadow-sm text-center hover:shadow-md transition">
+                    <div class="h-16 w-16 mx-auto mb-2 bg-cover bg-center" style="background-image: url('https://media-hosting.imagekit.io/be246c65979f464f/ChatGPT%20Image%20Apr%2025,%202025,%2011_45_08%20PM.png?Expires=1840212934&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=TNNTrgAr7D2CMIuK54nwxvWQwp808GzRrYaedYEvkWEHndFmbRDwSi6Fthdaubn8tJJ~W58qT-H81TM9hARMdK-0E1bfI7FHD1hS4S9VJBUR2o4ZcSr13UKrqv48eEcSM8ETv5h-PXmvePk~u2odlPx~wN8lKgJ27rjZljr55PKzN17K4nETEZOB5wNUGI6e5he3ghi2sTnW2AoNb8PEoyNjA7OZZqF1q0QRQ7VPrB3QILxy1v54Tpgz6RyS2FBHyxXQdNOzeu4jDR1p8qSXaNM-WqROSMQmLJkRjLJMIIt3AcUevgAsOMV0h1yuRXouVvIu7ItDC8rsvMDEZuhTyQ__');"></div>
+                    <h3 class="font-medium">Garnet</h3>
+                </div>
+                <div class="bg-white p-4 rounded shadow-sm text-center hover:shadow-md transition">
+                    <div class="h-16 w-16 mx-auto mb-2 bg-cover bg-center" style="background-image: url('https://media-hosting.imagekit.io/aae072ad325343e3/ChatGPT%20Image%20Apr%2026,%202025,%2012_14_26%20AM.png?Expires=1840214685&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Ubj~CWeE7jHbO7kkzsbXKX6SVFGMayd0lxAY0MkTgzVFh28-cvbgHI1s~SsdcTpAY2swmiwfi1-lzgkooxPdD0GCUQFqzSBISCkAv73eud-MFdU1GlF6usAyw0uM~fgl3SYzRRyfeXS7PWlaUExqdRj6B2H7ftPs5sGEF4~o1bsTXz7B4xy6j6OUwFDpSUjSy6FV~mmRrgSTkTFjSDEApDMLimgZGOfoHdHPB6RfCoxl3TLpH6GIHIEVBtUqHBCQUOJkyLybxWP7PlDyyqQ0TEhbzrTiDGaL3tU1w~lEA4Sn8SjkvbLpLpT0iIC4N47RJ3aJU3LvauwvepYNA~sW2A__');"></div>
+                    <h3 class="font-medium">Hessonite</h3>
+                </div>
+                <div class="bg-white p-4 rounded shadow-sm text-center hover:shadow-md transition">
+                    <div class="h-16 w-16 mx-auto mb-2 bg-cover bg-center" style="background-image: url('https://media-hosting.imagekit.io/2ea36a590a174d9f/image%20(6).jpg?Expires=1840216236&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=JIMYtWVe2ophx89TGpypeCtk9pVVqiuiFECWxWtseYrQi-YrS9yPAxaoiWTI-eHYjqDQEoL2zLk33hoMKJ2wg-7Nz-ojT2rx0D3lfdA56-GneSG5D-w1CYI2WSaDyyufCZ65U5ZJeOHgyTCzpuE2unI9IcYEh2FB32HlZ37ScNcDs6qQuepCM91cD5Y518IkiEBirVOa8XQouf5nala9mFMNJnHHRZHeLFo6M9q6YxGQplzid1pp1IwfyWh9IOEDqCtkPd0zugcQxo8VOhPASfFQbn4BlMJ8ZUOpJifa8BOPRbH3I7W~vRqAtO1jKs8pNlWMwjchjJWRVaZEQ4eagQ__');"></div>
+                    <h3 class="font-medium">Jade</h3>
+                </div>
+                <div class="bg-white p-4 rounded shadow-sm text-center hover:shadow-md transition">
+                    <div class="h-16 w-16 mx-auto mb-2 bg-cover bg-center" style="background-image: url('https://media-hosting.imagekit.io/0dbaa7bab2a24089/image%20(8).jpg?Expires=1840216375&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=izHRiWPhz-zmZCVqd9JXkffSEVPO7vhRcE8KhqGuYStH8o9S687jMJaDeXexKTzulUaIfhuCdHeggUwwBQZqdsLySWP-lCiT0spIBqXZwwrYWlY0VF~dGdVuQwjnZ2DsldMA0uFCUBO1NXTEIXVG8yVK-HCATbGBwkiyQShkYnCVGtlOudTbaQN9RBwTa2u1UWNhm8m-QOuNH4c76rVW7UoRnBq5H2VUJnuTMJzJE3lSP2XsMmEXyXS4Tyu8H5iSeds~eqgDR9iqyrvgLc8Czrly3boysfRTS3hc5EiQx1SGVpQ-SFnP7rFhe4vkmkpjmzh~4yU0-Ba6fidypc4WUA__');"></div>
+                    <h3 class="font-medium">Lapis Lazuli</h3>
+                </div>
+                <div class="bg-white p-4 rounded shadow-sm text-center hover:shadow-md transition">
+                    <div class="h-16 w-16 mx-auto mb-2 bg-cover bg-center" style="background-image: url('https://media-hosting.imagekit.io/0e0e65be1b5a496d/image%20(10).jpg?Expires=1840216724&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=0Fk~b6EvenBMf1BYzRliXO-K9-0tBCfhwI33emVhbXYwJMRtD6Rkz3TUhAnbXQOM7sZv3LH0tZrnsL64dhX7G~u~LoGbzh2GdPOq35Ba3sUJuIJeenELksW1Jj~CMAIOKqW-TNNR9Gv1IoeubgyDzTwt5aI7DswyIGX99QMc8Th8K2Mke6NHBdYK3-mAj2ctNU4U68-VQZwVsI3Ii~xlC4t52bCOWRP1T~WPnnq63DD0sEb0uTdYkb058CeqAkSJibBuPOVFuN0FKpOw5h5i3ZzKnSETg-Wx4ZR1lvtozJ74X4urxNfYD~MUS8gET1nCtWiyclLnzrN-xkj0joQQaw__');"></div>
+                    <h3 class="font-medium">Moonstone</h3>
+                </div>
+                <div class="bg-white p-4 rounded shadow-sm text-center hover:shadow-md transition">
+                    <div class="h-16 w-16 mx-auto mb-2 bg-cover bg-center" style="background-image: url('https://media-hosting.imagekit.io/f194d1e10e4b4f9c/image%20(11).jpg?Expires=1840216796&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=DOka1JB40zMnkCsLEyyCvWKZ4fQ4SLpF~8rD19FIjTUxCEXOjtrkM0soHdfdeKt9hk8126K2OQuPBNWm8Bgjtfy-jpmDXfy5Fb53RgW7mE8QZOpt~jU8vVcTRhNPDU-GGX0JD5YKXvLaGOa27zh3cB-6agvkmh910OS71L7MSHglexK-aM1aPOr6Lw0TNm4SIHl6FhB8QuZoHu1cTdi6ToOK1IyeZoIlk0HpkPHYb7o3kKbNqi3bzHAt3M6My-7zJqXWbYiRw2262oEwd3o26BhEV5h6OFZ5q1aTMl8qJfGBbSjvpFa7B1j~rim~7ZeImYT2-t0yI~4jgMSFuysxUw__');"></div>
+                    <h3 class="font-medium">Onyx</h3>
+                </div>
+                <div class="bg-white p-4 rounded shadow-sm text-center hover:shadow-md transition">
+                    <div class="h-16 w-16 mx-auto mb-2 bg-cover bg-center" style="background-image: url('https://media-hosting.imagekit.io/08151324602e49c6/image%20(12).jpg?Expires=1840216919&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=QemMwx4IuuyJovtVAfZnj2GHq~ghs4I5BCESQZZYK8hQ6pPdGaWG3a1ttoYOALGZe9hbYJfBikmZIsE5~682T0rpaCHo8ipGcuzOQU2a~j6YwdtFUja4O1V7B86CDzaQBqmiMbUqYmpXguPR3Eo~eyshJneRXauJ0LptmlUAwUJA7RCtXiFhzQyZnebVLE9Q0f1Zt09-wwxwXc-H6MbYaU~E6iZhnaeCE-VeGm~B1DddcRRHHWDYYEJQEhbv5QYxblKmuT64NyNARa5h7hQJaXo-Uug4zsDWtl7Jb0h1IF2tL6oXrF8q0wf7~PQAUTA7ezWiW2Z-qM72EFTm3mf9jw__');"></div>
+                    <h3 class="font-medium">Peridot</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rudraksha Section -->
+    <section id="rudraksha" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold heading-font text-center mb-12 gold-gradient-text">Rudraksha Collection</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Rudraksha 1 -->
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-64 bg-cover bg-center" style="background-image: url('https://media-hosting.imagekit.io/d47567b2054c4e20/image%20(13).jpg?Expires=1840217103&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Y~AV2KDjsxm-ae5Sf5OikiAAjwDVNIhjIkLEJI6~29meT18P4BoH~4SbqRgHYfasj208jkMbeTosYiyOqrUyGrgbSH2D38HBMzcqJcmZPikn19sz6nblN6pkUrV6GpI0akys-hEhFYjqOsgOXdj2HQOqQNwwrZtwaBBzihqrQhXAR33lW1UFvuVIpr5UNrsQw1~vx~rC-LJoKRdverXAiS9x1jM1m50Y~IBpOfrAeiC~3YANyAEqhGV2nO-hFdt74GFWz9lRm4rWI20gm6drxC5RnrRe3Cz0n0U6LuC7-GVPRVBXigsSx4C46-SQEkJJUt-iTaZNuL1oxCT6cmbckQ__');"></div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">1 Mukhi Rudraksha</h3>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded">Rare</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Represents Lord Shiva, brings enlightenment and spiritual growth.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-yellow-600">wholesale price</span>
+                            <button class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded transition">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Rudraksha 2 -->
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-64 bg-cover bg-center" style="background-image: url('https://media-hosting.imagekit.io/8b9adcb34ecf4f33/Symbolism_and_Spiritual_Significance_2.webp?Expires=1840217430&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=iN~sndX4WDmWEH7L3zyCOIJucHJgRohcbaeXyNTqb~qpnJXfWQc-9GGTjC~t2aHydDL6dtaYo1x8j-SdR7o4B-2LHOYE9ouuCCxV5I~eHAhVLfHEteWZkdJshvvLkK~IMt~UadW-hBoTI8-AXfxMfZOv9e8vOlroqvC3ws7IKlSD2JMhEEiLPJec6ppUpgbLZBOOH6W8Xze5qXfQDTKMHW1SQbdPHmpBkY3xFtSyHG-lBawHxcWEC39T5Ky0Y8xDYb2Zr~nbXVyrUsl5xSg5rfOCfTrgF9hJ6AEn107fkJ88yyEutEFt3GYqi0r8Cg009c~Ag632YVrJcAtLX5rL3w__');"></div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">5 Mukhi Rudraksha</h3>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded">Popular</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Represents Kalagni Rudra, brings peace, health and prosperity.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-yellow-600">wholesale price</span>
+                            <button class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded transition">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Rudraksha 3 -->
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-64 bg-cover bg-center" style="background-image: url('https://media-hosting.imagekit.io/ead6ca6edea8464c/7_Mukhi_Rudraksha_SKU1041R_7a15a816-8442-4f65-98e2-dabdd92522ef.webp?Expires=1840217637&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=eTlWeGjB96wd4SRaCg8~U~rRY4Qp2PHsg-vEsrcuopAgmyBaZgw-UlWw3KP7t~4TC1i4wXvBZ9UkSrug4aBhoDX~4y18eZIXK-Z0~XH3EbK0qWs3lR9xZdqlRIk4O4kEJCiB~9gA1SNjTMhjnnVTeVKjzJEOtBspxTiYVvQbj0xA6HCLx-GH1DSdUE-bSR9poqAv0xncGMrKAs-ZTe8eMbrcyQMmrque1gZ1Oyf7LEwWsICZHeaWPbeziLqUEJjxBKLIPNzDPjUWrserDv-gJrmbKq4Y5C-MsBh3vC2unY7cNMS0atMShkhI7rzcwCzbtAGJwqFIs4f2~N-FbLqpZQ__');"></div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">11 Mukhi Rudraksha</h3>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded">Powerful</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Represents Lord Hanuman, gives courage, strength and success.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-yellow-600">wholesale price</span>
+                            <button class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded transition">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#rudraksha" class="inline-block bg-black text-white font-bold py-3 px-8 rounded-full hover:bg-gray-800 transition duration-300">View All Rudraksha</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zodiac Gemstones Section -->
+    <section id="astrology" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold heading-font text-center mb-12 gold-gradient-text">Zodiac Gemstones</h2>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <!-- Aries -->
+                <div class="zodiac-card bg-white rounded-lg p-4 shadow-sm text-center transition duration-300">
+                    <div class="h-20 w-20 mx-auto mb-3 bg-cover bg-center rounded-full" style="background-image: url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <h3 class="font-bold mb-1">Aries</h3>
+                    <p class="text-sm text-gray-600">Red Coral</p>
+                    <p class="text-xs text-yellow-600 mt-2">Mar 21 - Apr 19</p>
+                </div>
+                
+                <!-- Taurus -->
+                <div class="zodiac-card bg-white rounded-lg p-4 shadow-sm text-center transition duration-300">
+                    <div class="h-20 w-20 mx-auto mb-3 bg-cover bg-center rounded-full" style="background-image: url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <h3 class="font-bold mb-1">Taurus</h3>
+                    <p class="text-sm text-gray-600">Emerald</p>
+                    <p class="text-xs text-yellow-600 mt-2">Apr 20 - May 20</p>
+                </div>
+                
+                <!-- Gemini -->
+                <div class="zodiac-card bg-white rounded-lg p-4 shadow-sm text-center transition duration-300">
+                    <div class="h-20 w-20 mx-auto mb-3 bg-cover bg-center rounded-full" style="background-image: url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <h3 class="font-bold mb-1">Gemini</h3>
+                    <p class="text-sm text-gray-600">Pearl</p>
+                    <p class="text-xs text-yellow-600 mt-2">May 21 - Jun 20</p>
+                </div>
+                
+                <!-- Cancer -->
+                <div class="zodiac-card bg-white rounded-lg p-4 shadow-sm text-center transition duration-300">
+                    <div class="h-20 w-20 mx-auto mb-3 bg-cover bg-center rounded-full" style="background-image: url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <h3 class="font-bold mb-1">Cancer</h3>
+                    <p class="text-sm text-gray-600">Pearl</p>
+                    <p class="text-xs text-yellow-600 mt-2">Jun 21 - Jul 22</p>
+                </div>
+                
+                <!-- Leo -->
+                <div class="zodiac-card bg-white rounded-lg p-4 shadow-sm text-center transition duration-300">
+                    <div class="h-20 w-20 mx-auto mb-3 bg-cover bg-center rounded-full" style="background-image: url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <h3 class="font-bold mb-1">Leo</h3>
+                    <p class="text-sm text-gray-600">Ruby</p>
+                    <p class="text-xs text-yellow-600 mt-2">Jul 23 - Aug 22</p>
+                </div>
+                
+                <!-- Virgo -->
+                <div class="zodiac-card bg-white rounded-lg p-4 shadow-sm text-center transition duration-300">
+                    <div class="h-20 w-20 mx-auto mb-3 bg-cover bg-center rounded-full" style="background-image: url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <h3 class="font-bold mb-1">Virgo</h3>
+                    <p class="text-sm text-gray-600">Emerald</p>
+                    <p class="text-xs text-yellow-600 mt-2">Aug 23 - Sep 22</p>
+                </div>
+                
+                <!-- Libra -->
+                <div class="zodiac-card bg-white rounded-lg p-4 shadow-sm text-center transition duration-300">
+                    <div class="h-20 w-20 mx-auto mb-3 bg-cover bg-center rounded-full" style="background-image: url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <h3 class="font-bold mb-1">Libra</h3>
+                    <p class="text-sm text-gray-600">Diamond</p>
+                    <p class="text-xs text-yellow-600 mt-2">Sep 23 - Oct 22</p>
+                </div>
+                
+                <!-- Scorpio -->
+                <div class="zodiac-card bg-white rounded-lg p-4 shadow-sm text-center transition duration-300">
+                    <div class="h-20 w-20 mx-auto mb-3 bg-cover bg-center rounded-full" style="background-image: url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <h3 class="font-bold mb-1">Scorpio</h3>
+                    <p class="text-sm text-gray-600">Yellow Sapphire</p>
+                    <p class="text-xs text-yellow-600 mt-2">Oct 23 - Nov 21</p>
+                </div>
+                
+                <!-- Sagittarius -->
+                <div class="zodiac-card bg-white rounded-lg p-4 shadow-sm text-center transition duration-300">
+                    <div class="h-20 w-20 mx-auto mb-3 bg-cover bg-center rounded-full" style="background-image: url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <h3 class="font-bold mb-1">Sagittarius</h3>
+                    <p class="text-sm text-gray-600">Yellow Sapphire</p>
+                    <p class="text-xs text-yellow-600 mt-2">Nov 22 - Dec 21</p>
+                </div>
+                
+                <!-- Capricorn -->
+                <div class="zodiac-card bg-white rounded-lg p-4 shadow-sm text-center transition duration-300">
+                    <div class="h-20 w-20 mx-auto mb-3 bg-cover bg-center rounded-full" style="background-image: url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <h3 class="font-bold mb-1">Capricorn</h3>
+                    <p class="text-sm text-gray-600">Blue Sapphire</p>
+                    <p class="text-xs text-yellow-600 mt-2">Dec 22 - Jan 19</p>
+                </div>
+                
+                <!-- Aquarius -->
+                <div class="zodiac-card bg-white rounded-lg p-4 shadow-sm text-center transition duration-300">
+                    <div class="h-20 w-20 mx-auto mb-3 bg-cover bg-center rounded-full" style="background-image: url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <h3 class="font-bold mb-1">Aquarius</h3>
+                    <p class="text-sm text-gray-600">Blue Sapphire</p>
+                    <p class="text-xs text-yellow-600 mt-2">Jan 20 - Feb 18</p>
+                </div>
+                
+                <!-- Pisces -->
+                <div class="zodiac-card bg-white rounded-lg p-4 shadow-sm text-center transition duration-300">
+                    <div class="h-20 w-20 mx-auto mb-3 bg-cover bg-center rounded-full" style="background-image: url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <h3 class="font-bold mb-1">Pisces</h3>
+                    <p class="text-sm text-gray-600">Yellow Sapphire</p>
+                    <p class="text-xs text-yellow-600 mt-2">Feb 19 - Mar 20</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Store Owner -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold heading-font text-center mb-12 gold-gradient-text">About Us</h2>
+            
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/3">
+                    <div class="h-64 w-64 mx-auto rounded-full bg-cover bg-center shadow-lg" style="background-image: url('https://media-hosting.imagekit.io/f43f11e8c9f64a8a/WhatsApp%20Image%202025-04-26%20at%2002.22.28_568bd6d8.jpg?Expires=1840222397&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=NFv7jJ3V1CcPi1TMyrfCgcclwWvQnVYSKhYeIBVpXfhTUjmwplXB9PXr6TYVUWcseTRvjxALk64XTkqntvRDIatJdrEIqWIWc1T5FkvFDpHBA8xBGz0E~IY5m1s6qtVGGap6q9SifTzT6Vx37ZFZVzPIm~eW~7hrup6n~o6~zqoPVoLbQzXGfY7N2Bsag3Msgetsk2mBeCPSU3rBk2PT3GEkAnMKDj2Cw~r5KGZ7Go~L8hy8katE1hHU6i9yNuNxo~vTTgYjd0t1vomh~eUiO9yu28PVxJlOlIIPErpYMSIdgD8OzzAoKCgOvusAWqa~LO9J1hY4uNPbs7OJAuFCcw__');"></div>
+                </div>
+                
+                <div class="md:w-2/3">
+                    <h3 class="text-2xl font-bold heading-font mb-4">Mukesh Verma</h3>
+                    <p class="text-gray-600 mb-6">With over 25 years of experience in gemology and astrology, Mukesh Verma has been helping clients find the perfect gemstones and Rudraksha beads to enhance their lives. His deep knowledge of Vedic astrology and gemstone properties ensures that each recommendation is perfectly aligned with the client's birth chart.</p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-phone-alt text-yellow-600 mr-3"></i>
+                            <div>
+                                <p class="text-sm text-gray-500">Phone</p>
+                                <p class="font-medium">9582488324 / 9312660843</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-instagram text-yellow-600 mr-3"></i>
+                            <div>
+                                <p class="text-sm text-gray-500">Instagram</p>
+                                <p class="font-medium">@patanjalijewellers</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center sm:col-span-2">
+                            <i class="fas fa-map-marker-alt text-yellow-600 mr-3"></i>
+                            <div>
+                                <p class="text-sm text-gray-500">Address</p>
+                                <p class="font-medium">137, Pakki Mori, Chopla Mandir, Ghaziabad, U.P.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold heading-font text-center mb-12 gold-gradient-text">Contact Us</h2>
+            
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2 bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-6">Get in Touch</h3>
+                    <form>
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 mb-2">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="phone" class="block text-gray-700 mb-2">Phone</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
+                        </div>
+                        <button type="submit" class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-6 rounded-lg transition">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-md h-full">
+                        <h3 class="text-xl font-bold mb-6">Store Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-yellow-600 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold mb-1">Address</h4>
+                                    <p class="text-gray-600">137, Pakki Mori, Chopla Mandir, Ghaziabad, Uttar Pradesh</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-phone-alt text-yellow-600 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold mb-1">Phone</h4>
+                                    <p class="text-gray-600">9582488324 / 9312660843</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope text-yellow-600 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold mb-1">Email</h4>
+                                    <p class="text-gray-600">patanjalijewellers@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-clock text-yellow-600 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold mb-1">Opening Hours</h4>
+                                    <p class="text-gray-600">Monday - Saturday: 10:00 AM - 8:00 PM</p>
+                                    <p class="text-gray-600">Sunday: 11:00 AM - 6:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Developer -->
+    <section id="developer" class="py-16 bg-black text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold heading-font text-center mb-12 gold-gradient-text">About Developer</h2>
+            
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/3">
+                    <div class="h-64 w-64 mx-auto rounded-full bg-cover bg-center shadow-lg" style="background-image: url('https://media-hosting.imagekit.io/a92f7ac356f04480/WhatsApp%20Image%202025-05-02%20at%2000.11.43_7fdc86c9.jpg?Expires=1840732932&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=F97eUCEX3l8IGTdLrMQGzvtRVjyVAyTFr1SY19o12s3IEF3X7sRm3VloqF2jophhgb~MTwI-KPMpVPAx4VirIVDtFMrOplbbhvpileS1mQwGDbpIZ69-SU8irWICaY3Nvg8UleD~ycybgdy4RRVKwzVjy-XD5Wvz4V80zYlDfFj4iBcGoCOD2T7U66ZKm44GfcQ7q9LUtkBwMM2DtC3xM7DbDGe95~D8Z4jLYyZhxHFtBdGjKSN3uLxvC49MK0W7VYcPZEMIZGRZznee11Iuuv1w6b1bUiaRLBeb-dNCO13LWqHBf7CoUoPD~40FHOVXmRWECnh650n1hlslrEIfWA__');"></div>
+                </div>
+                
+                <div class="md:w-2/3">
+                    <h3 class="text-2xl font-bold heading-font mb-4">Mohd Tavqeer</h3>
+                    <p class="text-gray-300 mb-6">Full Stack Developer with expertise in creating beautiful, functional eCommerce websites. Specializing in modern web technologies to deliver seamless user experiences.</p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-ccols-2 gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-yellow-600 mr-3"></i>
+                            <div>
+                                <p class="text-sm text-gray-400">Email</p>
+                                <p class="font-medium">mohdtavqeer72@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-linkedin text-yellow-600 mr-3"></i>
+                            <div>
+                                <p class="text-sm text-gray-400">LinkedIn</p>
+                                <p class="font-medium">https://www.linkedin.com/in/mohd-tavqeer-idricy-07b3b6357?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-instagram text-yellow-600 mr-3"></i>
+                            <div>
+                                <p class="text-sm text-gray-400">Instagram</p>
+                                <p class="font-medium">@tav.qeer_72</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="text-xl font-bold mb-4">Need a website for your business?</h4>
+                        <a href="mailto:mohdtavqeer72@gmail.com" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-black font-bold py-2 px-6 rounded-lg transition">Contact Developer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Social Media Icons -->
+    <div class="floating-socials flex flex-col space-y-4">
+        <a href="https://instagram.com/patanjalijewellers" target="_blank" class="social-icon bg-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg text-pink-600 hover:text-pink-700">
+            <i class="fab fa-instagram text-2xl"></i>
+        </a>
+        <a href="https://wa.me/919582488324?text=Hello%2C%20I'm%20interested%20in%20your%20jewellery." target="_blank" class="social-icon bg-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg text-green-600 hover:text-green-700">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold heading-font gold-gradient-text mb-2">Patanjali Jewellery and Gems</h3>
+                    <p class="text-gray-400">© 2025 All Rights Reserved</p>
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="#home" class="text-gray-300 hover:text-yellow-400 transition">Home</a>
+                    <a href="#gemstones" class="text-gray-300 hover:text-yellow-400 transition">Gemstones</a>
+                    <a href="#rudraksha" class="text-gray-300 hover:text-yellow-400 transition">Rudraksha</a>
+                    <a href="#contact" class="text-gray-300 hover:text-yellow-400 transition">Contact</a>
+                    <a href="#developer" class="text-gray-300 hover:text-yellow-400 transition">About Developer</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>Crafted with ❤️ by Mohd Tavqeer </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+        
+        // Banner Slider
+        const bannerSlides = document.querySelectorAll('.banner-slide');
+        const bannerDots = document.querySelectorAll('.banner-dot');
+        let currentSlide = 0;
+        
+        function showSlide(index) {
+            bannerSlides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'flex' : 'none';
+            });
+            
+            bannerDots.forEach((dot, i) => {
+                dot.classList.toggle('opacity-100', i === index);
+                dot.classList.toggle('opacity-50', i !== index);
+            });
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % bannerSlides.length;
+            showSlide(currentSlide);
+        }
+        
+        bannerDots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                currentSlide = parseInt(dot.dataset.slide);
+                showSlide(currentSlide);
+            });
+        });
+        
+        // Auto slide every 5 seconds
+        setInterval(nextSlide, 5000);
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (mobileMenu.classList.contains('active')) {
+                        mobileMenu.classList.remove('active');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
